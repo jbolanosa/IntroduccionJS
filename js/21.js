@@ -1,3 +1,9 @@
+//arrow functions
+
+// const sumar2 = (n1, n2) => 
+//     n1 + n2;
+
+// console.log(sumar2(1, 2));
 
 const meses = new Array('Enero', 'Febrero', 'Marzo', 'Mayo');
 
@@ -13,43 +19,31 @@ const carrito = [
 ];
 
 //foreach
-meses.forEach(function(mes) {
+meses.forEach(mes => {
     if(mes == 'Marzo'){
         console.log('Marzo si existe');
     }
 });
 
-//includes, funciona bien para una arreglo sencillo
-let resultado = meses.includes('Marzo');
 
 //some ideal para arreglo de objetos, saber si un dato esta dentro del array
-resultado = carrito.some(function(producto) {
-    return producto.nombre === 'Celular';
-});
+resultado = carrito.some(producto => producto.nombre === 'Celular');
 
 //cona arrow function
 resultado = carrito.some(producto => producto.nombre === 'Celular');
 
 
 //reduce
-resultado = carrito.reduce(function(total, producto){
-    return total + producto.precio;
-}, 0);
+resultado = carrito.reduce((total, producto) => total + producto.precio, 0);
 
 
 //filter
 //obtener elementos segun condicion
-resultado = carrito.filter(function(producto){
-    return producto.precio > 400;
-});
+resultado = carrito.filter(producto => producto.precio > 400);
 
-resultado = carrito.filter(function(producto){
-    return producto.nombre === 'Celular';
-});
+resultado = carrito.filter(producto => producto.nombre === 'Celular');
 
-resultado = carrito.filter(function(producto){
-    return producto.nombre !== 'Celular';
-});
+resultado = carrito.filter(producto => producto.nombre !== 'Celular');
 
 
 console.log(resultado);
